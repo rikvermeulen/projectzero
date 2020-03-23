@@ -1,1 +1,30 @@
-//
+//abstracts
+  @import "abstracts/variables";
+
+@import "~bootstrap/scss/bootstrap";
+
+
+//base
+  @import "base/global";
+  @import "base/typography";
+  @import "base/animations";
+
+
+//components
+    @import 'components/gallary';
+    @import 'components/buttons';
+
+
+//layout
+  @import 'layout/header';
+  @import 'layout/navigation';
+  @import 'layout/footer';
+  @import 'layout/forms';
+
+//page
+    @import 'page/index';
+    @import 'page/error';
+
+
+
+
