@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ZWSy966pZcQ21y67cyTYxCVZ7a" />
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2" timestamp="1584953753272">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="320" y="201" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1584953753272" />
+    <state x="443" y="260" key="git4idea.merge.GitPullDialog" timestamp="1584953765571">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="443" y="260" key="git4idea.merge.GitPullDialog/0.23.1440.877@0.23.1440.877" timestamp="1584953765571" />
+    <state x="558" y="259" key="svn.repositoryBrowser" timestamp="1584953700393">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="558" y="259" key="svn.repositoryBrowser/0.23.1440.877@0.23.1440.877" timestamp="1584953700393" />
+    <state x="510" y="243" key="svn4idea.import.options" timestamp="1584953684138">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="510" y="243" key="svn4idea.import.options/0.23.1440.877@0.23.1440.877" timestamp="1584953684138" />
+  </component>
+</project>
