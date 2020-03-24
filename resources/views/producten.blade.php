@@ -43,8 +43,8 @@
 
 
     <ul class="nav menu">
-        <li class="active"><a href="{{route('home')}}"><i class="fa fa-home"></i> Dashboard</a></li>
-        <li><a href="{{route('producten')}}"><i class="fas fa-shopping-basket"></i> Mijn Producten</a></li>
+        <li><a href="{{route('home')}}"><i class="fa fa-home"></i> Dashboard</a></li>
+        <li class="active"><a href="{{route('producten')}}"><i class="fas fa-shopping-basket"></i> Mijn Producten</a></li>
         <li><a href="charts.html"><i class="far fa-user-circle"></i> Account</a></li>
         <li><a href="elements.html"><i class="fas fa-cog"></i> Instellingen</a></li>
         <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -77,9 +77,7 @@
             <div class="col-md-3">
                 <div class="panel panel-teal panel-widget border-right">
                     <div class="row no-padding"><em class="fa fa-xl fa-shopping-cart color-blue"></em>
-
                         <div class="large">{{$producten}}</div>
-
                         <div class="text-muted">Aantal producten</div>
                     </div>
                 </div>
@@ -110,7 +108,7 @@
     </div>
 
     <div class="row">
-        <h4 style="position: relative;text-align: center"><b>Recent toegevoegd:</b></h4><br />
+        <h4 style="position: relative;text-align: center"><b>Alle producten:</b></h4><br />
         <div id="players"></div>
     </div>
 

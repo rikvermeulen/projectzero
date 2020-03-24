@@ -1032,6 +1032,6 @@ p.back-link {
   font-size: 12px;
   text-transform: uppercase; }
 
-.btn-zoeken:hover{
-    opacity:1!important;
+.text-muted:hover{
+    border:none;
 }
