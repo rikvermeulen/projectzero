@@ -76,6 +76,10 @@ if (isset($_POST["button_producten"])) {
     </tr>
   </tbody>
 </table>
+<div class='buttons' style='position:absolute;right:0px;'>
+<a href='http://localhost:8080/projectzero/public/home'><button type=\"button\" class=\"btn btn-info\">Terug</button></a>
+<button type=\"button\" class=\"btn btn-success\">Opslaan</button>
+</div>
 </div>
 </div>";
 }
