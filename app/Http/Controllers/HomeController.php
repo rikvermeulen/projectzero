@@ -31,6 +31,12 @@ class HomeController extends Controller
     public function producten()
     {
         $producten = DB::table('producten')->where('winkel', auth()->user()->winkel)->count();
-        return view('producten')->with('producten', $producten);;
+        return view('producten')->with('producten', $producten);
+    }
+
+    public function account()
+    {
+        $producten = DB::table('producten')->where('winkel', auth()->user()->winkel)->count();
+        return view('account')->with('producten', $producten);
     }
 }

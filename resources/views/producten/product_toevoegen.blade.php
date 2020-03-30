@@ -68,54 +68,73 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
+            <h1 class="page-header">Product toevoegen</h1>
         </div>
     </div><!--/.row-->
 
-    <div class="panel panel-container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="panel panel-teal panel-widget border-right">
-                    <div class="row no-padding"><em class="fa fa-xl fa-shopping-cart color-blue"></em>
 
-                        <div class="large">{{$producten}}</div>
+    <!------ Include the above in your HEAD tag ---------->
 
-                        <div class="text-muted">Aantal producten</div>
+    <div class="container">
+        <div class="stepwizard">
+            <div class="stepwizard-row setup-panel">
+                <div class="stepwizard-step">
+                    <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                    <p>Stap 1</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                    <p>Stap 2</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Stap 3</p>
+                </div>
+            </div>
+        </div>
+        <form role="form">
+            <div class="row setup-content" id="step-1">
+                <div class="col-xs-12">
+                    <div class="col-md-12">
+                        <h3> Stap 1</h3>
+                        <div class="form-group">
+                            <label class="control-label">Product naam</label>
+                            <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Product naam"  />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Product beschrijving</label>
+                            <textarea rows="4" cols="50" required="required" class="form-control" placeholder="Product Beschrijving..."></textarea>
+                        </div>
+                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                     </div>
                 </div>
             </div>
-            <a href="" style="text-decoration: none;">
-            <div class="col-md-3">
-                <div class="panel panel-teal panel-widget border-right">
-                    <div class="row no-padding">
-                        <div class="text-muted" style="font-size: 20px;height:100px;"><h4 class="text-muted" style="position:relative; top:45px;">Product Toevoegen <i class="far fa-arrow-alt-circle-right"></i></h4></div>
+            <div class="row setup-content" id="step-2">
+                <div class="col-xs-12">
+                    <div class="col-md-12">
+                        <h3> Stap 2</h3>
+                        <div class="form-group">
+                            <label class="control-label">Product image</label>
+                            <input type='file' required="required" class="form-control" id="imgInp" />
+                            <img id="blah" src="#" alt="your image" style="width:600px; display:none; position:absolute;margin-top:20px;"/>
+                        </div>
+                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                     </div>
                 </div>
             </div>
-            </a>
-        </div><!--/.row-->
-    </div>
-
-    <div class="row">
-        <form id="football-search" class="form-horizontal" style="position:relative;left:15px;">
-            <div class="form-group">
-                <div class="col-md-9">
-                    <input class="form-control" type="text" id="club-name" placeholder="Product zoeken"/>
-                </div>
-                <div class="col-md-1">
-                    <button type="submit" class="btn btn-info btn-zoeken" style="position:relative;left:-20px;height:45px;width:100px;">Zoeken</button>
+            <div class="row setup-content" id="step-3">
+                <div class="col-xs-12">
+                    <div class="col-md-12">
+                        <h3> Stap 3</h3>
+                        <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+                    </div>
                 </div>
             </div>
         </form>
     </div>
 
-    <div class="row">
-        <h4 style="position: relative;text-align: center"><b>Recent toegevoegd:</b></h4><br />
-        <div id="players"></div>
-    </div>
 
-
-    </div><!--/.row-->
+</div><!--/.row-->
 <input type="text" id="test" value="{{auth()->user()->winkel}}" style="display:none;"/>
 
 
@@ -130,6 +149,7 @@
 
 
 <script src="{{ URL::asset('js/product.js') }}"></script>
+<script src="{{ URL::asset('js/app.js') }}"></script>
 <script>
     window.onload = function () {
         var chart1 = document.getElementById("line-chart").getContext("2d");
@@ -141,7 +161,22 @@
         });
     };
 
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
+            reader.onload = function(e) {
+                $('#blah').attr('src', e.target.result);
+                document.getElementById('blah').style.display = "block";
+            };
+
+            reader.readAsDataURL(input.files[0]); // convert to base64 string
+        }
+    }
+
+    $("#imgInp").change(function() {
+        readURL(this);
+    });
 
 </script>
 

@@ -21,4 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/producten', 'HomeController@producten')->name('producten');
+Route::get('/account', 'HomeController@account')->name('account');
+Route::get('/product/toevoegen', 'ProductenController@toevoegen')->name('product_toevoegen');
 

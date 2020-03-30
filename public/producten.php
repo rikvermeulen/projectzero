@@ -1,38 +1,26 @@
 <?php
-$producten = [
-    [
-        "id" => 1,
-        "product_name" => "Maandkalender 2020",
-        "product_image" => "agenda.jpg",
-        "club" => "Hema",
-        "product_text" => "Een maandkalender van het jaar 2020 op een goudkleurige standaard, bijvoorbeeld voor op je bureau.",
-        "product_prijs" => 5,
-    ],
-    [
-        "id" => 2,
-        "product_name" => "Tompouce",
-        "product_image" => "tompouce.jpg",
-        "club" => "Hema",
-        "product_text" => "Bladerdeeg gevuld met onze luchtige HEMA vulling en gedecoreerd met een laagje roze fondant.",
-        "product_prijs" => 1,
-    ],
-    [
-        "id" => 3,
-        "product_name" => "Gevlochten placemat",
-        "product_image" => "placemat.jpg",
-        "club" => "Hema",
-        "product_text" => "Een ronde gevlochten placemat, gemaakt van jute.",
-        "product_prijs" => 5,
-    ],
-    [
-        "id" => 4,
-        "product_name" => "Hoofdkussen",
-        "product_image" => "kussen.jpg",
-        "club" => "Hema",
-        "product_text" => "De vulling van dit latex hoofdkussen zorgt voor een optimaal comfort en een goede nachtrust.",
-        "product_prijs" => 9,
-    ]
-];
+$producten = [];
+require_once('db.php');
+$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+$query = "SELECT * FROM producten";
+if ($result = $mysqli->query($query)) {
+    while ($row = $result->fetch_assoc()) {
+        $id = $row['id'];
+        $naam = $row['product_name'];
+        $image = $row['product_image'];
+        $winkel = $row['winkel'];
+        $beschrijving = $row['product_text'];
+        $prijs = $row['product_prijs'];
+
+        array_push ($producten, ["id" => $id,
+            "product_name" => "$naam",
+            "product_image" => "$image",
+            "club" => "$winkel",
+            "product_text" => "$beschrijving",
+            "product_prijs" => $prijs]);
+    }
+}
 
 if (isset($_GET["club"]) && $_GET["club"] != "") {
     $producten = array_values(array_filter($producten, function ($product) {
